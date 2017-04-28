@@ -15,6 +15,7 @@ RUN yum -y update \
     && yum clean all \
     && rm -rf /tmp/* \
     && chmod +x /root/failover.sh \
+    && chmod +x /start-maxscale.sh \
     && mkdir /root/failover \
     && mv /root/sendEmail-v1.56 /root/sendEmail \
     && mkdir -p /etc/maxscale.d \
