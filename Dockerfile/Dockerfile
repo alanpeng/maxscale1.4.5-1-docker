@@ -11,7 +11,7 @@ RUN yum -y update \
     && yum -y install perl \
     && yum -y install http://rancher.wise2c.com/maxscale-1.4.5-1.centos.7.x86_64.rpm \
     && yum -y install http://rancher.wise2c.com/mysql-utilities-1.6.5-1.el7.noarch.rpm \
-    && yum -y install http://rancher.wise2c.com/mysql-connector-python-2.1.6-1.el7.x86_64.rpm \
+    && yum -y install http://rancher.wise2c.com/mysql-connector-python-2.1.5-1.el7.x86_64.rpm \
     && yum clean all \
     && rm -rf /tmp/* \
     && chmod +x /root/failover.sh \
