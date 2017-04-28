@@ -1,0 +1,14 @@
+Failover=True
+SenderAddress=systemadmin@wise2c.com
+SenderAccount=systemadmin@wise2c.com
+SenderPassword=PleaseChangeYourPassword
+RecipientsAddress="alan_peng@wise2c.com"
+SMTP_Server=smtp.exmail.qq.com
+SubjectBeforeFailover="Failure detected with MySQL Master Node !!!"
+SubjectAfterFailover="Failover completed. Please check if everything is running well."
+MailBodyBeforeFailover="Failure detected with MySQL Master Node !!! If you have enabled auto-failover, you will receive an email after the auto-failover operation completed. Please double confirm everything is running well. You can follow the instruction attachment in the email."
+MailBodyAfterFailover="Auto-failover operations is completed. One of the old slave node has been changed to the new master node! Please double confirm everything is running well. You can follow the instruction attachment in the email."
+MessageType=text
+MessageCharset=utf8
+AttachmentBeforeFailover="/root/failover/attachment-before-failover"
+AttachmentAfterFailover="/root/failover/attachment-after-failover"
