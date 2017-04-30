@@ -17,7 +17,7 @@ RUN yum -y update \
     && rpm -ivh /root/mysql-utilities-1.6.5-1.el7.noarch.rpm /root/mysql-connector-python-2.1.6-1.el7.x86_64.rpm \
     && rm -f /root/mysql-utilities-1.6.5-1.el7.noarch.rpm \
     && rm -f /root/mysql-connector-python-2.1.6-1.el7.x86_64.rpm \
-    // && yum clean all \
+    # && yum clean all \
     && rm -rf /tmp/* \
     && chmod +x /root/failover.sh \
     && chmod +x /start-maxscale.sh \
