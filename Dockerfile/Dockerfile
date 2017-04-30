@@ -14,8 +14,7 @@ RUN yum -y update \
     && cd /root \
     && wget https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-utilities-1.6.5-1.el7.noarch.rpm \
     && wget https://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-2.1.6-1.el7.x86_64.rpm \
-    && rpm -ivh /root/mysql-utilities-1.6.5-1.el7.noarch.rpm \
-    && rpm -ivh /root/mysql-connector-python-2.1.6-1.el7.x86_64.rpm \
+    && rpm -ivh /root/mysql-utilities-1.6.5-1.el7.noarch.rpm /root/mysql-connector-python-2.1.6-1.el7.x86_64.rpm \
     && rm -f /root/mysql-utilities-1.6.5-1.el7.noarch.rpm \
     && rm -f /root/mysql-connector-python-2.1.6-1.el7.x86_64.rpm \
     && yum clean all \
