@@ -10,8 +10,8 @@ ADD sendEmail-v1.56.tar.gz /root/
 RUN yum -y update
 RUN yum -y install perl
 RUN yum -y install https://downloads.mariadb.com/MaxScale/1.4.5/centos/7/x86_64/maxscale-1.4.5-1.centos.7.x86_64.rpm
-RUN yum -y install http://rancher.wise2c.com/mysql-utilities-1.6.5-1.el7.noarch.rpm
-RUN yum -y install http://rancher.wise2c.com/mysql-connector-python-2.1.5-1.el7.x86_64.rpm
+RUN yum -y install https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-utilities-1.6.5-1.el7.noarch.rpm
+RUN yum -y install https://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-2.1.6-1.el7.x86_64.rpm
 RUN yum clean all
 RUN rm -rf /tmp/*
 RUN chmod +x /root/failover.sh
