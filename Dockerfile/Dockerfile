@@ -7,20 +7,20 @@ COPY failover.sh /root/
 COPY EmailConfig / 
 ADD sendEmail-v1.56.tar.gz /root/
 
-RUN yum -y update
-RUN yum -y install perl
-RUN yum -y install https://downloads.mariadb.com/MaxScale/1.4.5/centos/7/x86_64/maxscale-1.4.5-1.centos.7.x86_64.rpm
-RUN yum -y install http://121.201.109.84/mysql-utilities-1.6.5-1.el7.noarch.rpm
-RUN yum -y install http://121.201.109.84/mysql-connector-python-2.1.6-1.el7.x86_64.rpm
-RUN yum clean all
-RUN rm -rf /tmp/*
-RUN chmod +x /root/failover.sh
-RUN chmod +x /start-maxscale.sh
-RUN mkdir /root/failover
-RUN mv /root/sendEmail-v1.56 /root/sendEmail
-RUN mkdir -p /etc/maxscale.d
-RUN mv /maxscale.cnf /etc/maxscale.d/maxscale.cnf
-RUN ln -sf /etc/maxscale.d/maxscale.cnf /etc/maxscale.cnf
+RUN yum -y update \
+    && yum -y install perl \
+    && yum -y install https://downloads.mariadb.com/MaxScale/1.4.5/centos/7/x86_64/maxscale-1.4.5-1.centos.7.x86_64.rpm \
+    && rpm -ivh http://121.201.109.84/mysql-utilities-1.6.5-1.el7.noarch.rpm \
+    && rpm -ivh http://121.201.109.84/mysql-connector-python-2.1.6-1.el7.x86_64.rpm \
+    && yum clean all \
+    && rm -rf /tmp/* \
+    && chmod +x /root/failover.sh \
+    && chmod +x /start-maxscale.sh \
+    && mkdir /root/failover \
+    && mv /root/sendEmail-v1.56 /root/sendEmail \
+    && mkdir -p /etc/maxscale.d \
+    && mv /maxscale.cnf /etc/maxscale.d/maxscale.cnf \
+    && ln -sf /etc/maxscale.d/maxscale.cnf /etc/maxscale.cnf
 
 # VOLUME for custom configuration
 VOLUME ["/etc/maxscale.d"]
