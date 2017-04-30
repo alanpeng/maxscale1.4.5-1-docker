@@ -11,7 +11,7 @@ RUN yum -y update \
     && yum -y install perl \
     && yum -y install wget \
     && yum -y install https://downloads.mariadb.com/MaxScale/1.4.5/centos/7/x86_64/maxscale-1.4.5-1.centos.7.x86_64.rpm \
-    && yum clean all \
+    && yum clean metadata \
     && rm -rf /tmp/* \
     && ce /root \
     && wget https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-utilities-1.6.5-1.el7.noarch.rpm \
