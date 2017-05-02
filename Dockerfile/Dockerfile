@@ -9,14 +9,9 @@ ADD sendEmail-v1.56.tar.gz /root/
 
 RUN yum -y update \
     && yum -y install perl \
-    && yum -y install wget \
-    && yum -y install https://downloads.mariadb.com/MaxScale/1.4.5/centos/7/x86_64/maxscale-1.4.5-1.centos.7.x86_64.rpm \
-    && cd /root \
-    && wget https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-utilities-1.6.5-1.el7.noarch.rpm \
-    && wget https://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-2.1.6-1.el7.x86_64.rpm \
-    && rpm -ivh /root/mysql-utilities-1.6.5-1.el7.noarch.rpm /root/mysql-connector-python-2.1.6-1.el7.x86_64.rpm \
-    && rm -f /root/mysql-utilities-1.6.5-1.el7.noarch.rpm \
-    && rm -f /root/mysql-connector-python-2.1.6-1.el7.x86_64.rpm \
+    && yum -y install https://downloads.mariadb.com/MaxScale/1.4.5/centos/7/x86_64/maxscale-1.4.5-1.centos.7.x86_64.rpm \
+    && yum -y install https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-utilities-1.6.5-1.el7.noarch.rpm \
+    && yum -y install https://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-2.1.6-1.el7.x86_64.rpm \
     && yum clean all \
     && rm -rf /tmp/* \
     && chmod +x /root/failover.sh \
